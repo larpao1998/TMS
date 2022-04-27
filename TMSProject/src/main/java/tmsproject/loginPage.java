@@ -4,17 +4,22 @@
  */
 package tmsproject;
 
+import java.awt.Color;
 /**
  *
  * @author Alexandre
  */
 public class loginPage extends javax.swing.JFrame {
 
+    int x,y;
+    
     /**
      * Creates new form loginPage
      */
     public loginPage() {
         initComponents();
+        username.setBackground(new Color(0, 0, 0, 64));
+        password.setBackground(new Color(0, 0, 0, 64));
     }
 
     /**
@@ -27,76 +32,127 @@ public class loginPage extends javax.swing.JFrame {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        logoBox = new javax.swing.JLabel();
-        titleBox = new javax.swing.JLabel();
-        userTextBox = new javax.swing.JTextField();
-        passTextBox = new javax.swing.JPasswordField();
-        loginButton = new javax.swing.JButton();
+        exit = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        username = new javax.swing.JTextField();
+        password = new javax.swing.JPasswordField();
+        login = new javax.swing.JButton();
+        bgPhoto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(16, 53, 94));
+        setUndecorated(true);
 
         bg.setBackground(new java.awt.Color(204, 204, 204));
+        bg.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                bgMousePressed(evt);
+            }
+        });
+        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        logoBox.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexandre\\Desktop\\Desktop Applications\\School\\Software Engineering Project\\Logo Pictures\\mainLogo100x100.png")); // NOI18N
+        exit.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexandre\\Documents\\NetBeansProjects\\Images\\icons8-x-24.png")); // NOI18N
+        exit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exitMouseClicked(evt);
+            }
+        });
+        bg.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 0, -1, -1));
 
-        titleBox.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        titleBox.setText("Transportation Management System");
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexandre\\Documents\\NetBeansProjects\\Images\\usernameIcon2.png")); // NOI18N
+        bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 130, -1, -1));
 
-        userTextBox.setText("username");
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexandre\\Documents\\NetBeansProjects\\Images\\passwordIcon.png")); // NOI18N
+        bg.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 180, -1, -1));
 
-        passTextBox.setText("jPasswordField1");
+        username.setBackground(new java.awt.Color(237, 237, 237));
+        username.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        username.setForeground(new java.awt.Color(255, 255, 255));
+        username.setText("username");
+        username.setBorder(null);
+        bg.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 200, 30));
 
-        loginButton.setText("Login");
+        password.setForeground(new java.awt.Color(255, 255, 255));
+        password.setText("jPasswordField1");
+        password.setBorder(null);
+        password.setPreferredSize(new java.awt.Dimension(90, 27));
+        password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordActionPerformed(evt);
+            }
+        });
+        bg.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 200, 30));
 
-        javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
-        bg.setLayout(bgLayout);
-        bgLayout.setHorizontalGroup(
-            bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bgLayout.createSequentialGroup()
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(logoBox)
-                        .addGap(127, 127, 127)
-                        .addComponent(titleBox))
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(330, 330, 330)
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(passTextBox, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
-                            .addComponent(userTextBox)
-                            .addComponent(loginButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(252, Short.MAX_VALUE))
-        );
-        bgLayout.setVerticalGroup(
-            bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bgLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(titleBox)
-                    .addComponent(logoBox))
-                .addGap(73, 73, 73)
-                .addComponent(userTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(passTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(64, 64, 64)
-                .addComponent(loginButton)
-                .addContainerGap(136, Short.MAX_VALUE))
-        );
+        login.setText("Login");
+        login.setPreferredSize(new java.awt.Dimension(75, 27));
+        login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginActionPerformed(evt);
+            }
+        });
+        bg.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 110, -1));
+
+        bgPhoto.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexandre\\Documents\\NetBeansProjects\\Images\\skyline2.jpg")); // NOI18N
+        bgPhoto.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                bgPhotoMouseDragged(evt);
+            }
+        });
+        bgPhoto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                bgPhotoMousePressed(evt);
+            }
+        });
+        bg.add(bgPhoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordActionPerformed
+
+    private void exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_exitMouseClicked
+
+    private void bgMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bgMousePressed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_bgMousePressed
+
+    private void bgPhotoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bgPhotoMousePressed
+        // TODO add your handling code here:
+        x = evt.getX();
+        y = evt.getY();
+    }//GEN-LAST:event_bgPhotoMousePressed
+
+    private void bgPhotoMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bgPhotoMouseDragged
+        // TODO add your handling code here:
+        int xx = evt.getXOnScreen();
+        int yy = evt.getYOnScreen();
+        this.setLocation(xx-x, yy-y);
+    }//GEN-LAST:event_bgPhotoMouseDragged
+
+    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new homePage().setVisible(true);
+    }//GEN-LAST:event_loginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -135,10 +191,12 @@ public class loginPage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
-    private javax.swing.JButton loginButton;
-    private javax.swing.JLabel logoBox;
-    private javax.swing.JPasswordField passTextBox;
-    private javax.swing.JLabel titleBox;
-    private javax.swing.JTextField userTextBox;
+    private javax.swing.JLabel bgPhoto;
+    private javax.swing.JLabel exit;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton login;
+    private javax.swing.JPasswordField password;
+    private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }
