@@ -4,6 +4,8 @@
  */
 package tmsproject;
 
+import java.awt.Color;
+
 /**
  *
  * @author Alexandre
@@ -16,6 +18,7 @@ public class homePage extends javax.swing.JFrame {
      */
     public homePage() {
         initComponents();
+        mainPanel.setBackground(new Color(0, 0, 0, 64));
     }
 
     /**
@@ -37,12 +40,13 @@ public class homePage extends javax.swing.JFrame {
         signoutButton = new javax.swing.JButton();
         mainPanel = new javax.swing.JPanel();
         exit = new javax.swing.JLabel();
+        bgPhoto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(859, 479));
 
-        bg.setBackground(new java.awt.Color(69, 119, 175));
+        bg.setBackground(new java.awt.Color(216, 174, 144));
         bg.setPreferredSize(new java.awt.Dimension(859, 479));
         bg.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
@@ -54,14 +58,15 @@ public class homePage extends javax.swing.JFrame {
                 bgMousePressed(evt);
             }
         });
+        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        menuPanel.setBackground(new java.awt.Color(36, 62, 91));
+        menuPanel.setBackground(new java.awt.Color(132, 97, 72));
         menuPanel.setPreferredSize(new java.awt.Dimension(286, 479));
 
         iconBox.setForeground(new java.awt.Color(255, 255, 255));
         iconBox.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexandre\\Documents\\NetBeansProjects\\Images\\citynoBG.png")); // NOI18N
 
-        addButton.setBackground(new java.awt.Color(42, 72, 107));
+        addButton.setBackground(new java.awt.Color(109, 81, 59));
         addButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         addButton.setForeground(new java.awt.Color(242, 242, 242));
         addButton.setText("ADD");
@@ -73,7 +78,7 @@ public class homePage extends javax.swing.JFrame {
             }
         });
 
-        modifyButton.setBackground(new java.awt.Color(42, 72, 107));
+        modifyButton.setBackground(new java.awt.Color(109, 81, 59));
         modifyButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         modifyButton.setForeground(new java.awt.Color(242, 242, 242));
         modifyButton.setText("MODIFY");
@@ -85,7 +90,7 @@ public class homePage extends javax.swing.JFrame {
             }
         });
 
-        deleteButton.setBackground(new java.awt.Color(42, 72, 107));
+        deleteButton.setBackground(new java.awt.Color(109, 81, 59));
         deleteButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         deleteButton.setForeground(new java.awt.Color(242, 242, 242));
         deleteButton.setText("DELETE");
@@ -97,7 +102,7 @@ public class homePage extends javax.swing.JFrame {
             }
         });
 
-        inquireButton.setBackground(new java.awt.Color(42, 72, 107));
+        inquireButton.setBackground(new java.awt.Color(109, 81, 59));
         inquireButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         inquireButton.setForeground(new java.awt.Color(242, 242, 242));
         inquireButton.setText("INQUIRE");
@@ -109,7 +114,7 @@ public class homePage extends javax.swing.JFrame {
             }
         });
 
-        signoutButton.setBackground(new java.awt.Color(42, 72, 107));
+        signoutButton.setBackground(new java.awt.Color(109, 81, 59));
         signoutButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         signoutButton.setForeground(new java.awt.Color(242, 242, 242));
         signoutButton.setText("SIGN OUT");
@@ -153,6 +158,10 @@ public class homePage extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        bg.add(menuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        mainPanel.setBackground(new java.awt.Color(247, 235, 227));
+
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
@@ -164,37 +173,18 @@ public class homePage extends javax.swing.JFrame {
             .addGap(0, 434, Short.MAX_VALUE)
         );
 
+        bg.add(mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 30, -1, -1));
+
         exit.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexandre\\Documents\\NetBeansProjects\\Images\\icons8-x-24.png")); // NOI18N
         exit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitMouseClicked(evt);
             }
         });
+        bg.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(835, 0, -1, -1));
 
-        javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
-        bg.setLayout(bgLayout);
-        bgLayout.setHorizontalGroup(
-            bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bgLayout.createSequentialGroup()
-                .addComponent(menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(0, 537, Short.MAX_VALUE)
-                        .addComponent(exit))
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
-        );
-        bgLayout.setVerticalGroup(
-            bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(menuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(bgLayout.createSequentialGroup()
-                .addComponent(exit)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
+        bgPhoto.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexandre\\Documents\\NetBeansProjects\\Images\\skyline3.jpg")); // NOI18N
+        bg.add(bgPhoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 570, 480));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -213,26 +203,31 @@ public class homePage extends javax.swing.JFrame {
 
     private void modifyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyButtonActionPerformed
         // TODO add your handling code here:
+        setVisible(false);
         new modifyPage().setVisible(true);
     }//GEN-LAST:event_modifyButtonActionPerformed
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         // TODO add your handling code here:
+        setVisible(false);
         new deletePage().setVisible(true);
     }//GEN-LAST:event_deleteButtonActionPerformed
 
     private void inquireButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inquireButtonActionPerformed
         // TODO add your handling code here:
+        setVisible(false);
         new inquirePage().setVisible(true);
     }//GEN-LAST:event_inquireButtonActionPerformed
 
     private void signoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signoutButtonActionPerformed
         // TODO add your handling code here:
+        setVisible(false);
         new signoutPage().setVisible(true);
     }//GEN-LAST:event_signoutButtonActionPerformed
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         // TODO add your handling code here:
+        setVisible(false);
         new addPage().setVisible(true);
     }//GEN-LAST:event_addButtonActionPerformed
 
@@ -292,6 +287,7 @@ public class homePage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
     private javax.swing.JPanel bg;
+    private javax.swing.JLabel bgPhoto;
     private javax.swing.JButton deleteButton;
     private javax.swing.JLabel exit;
     private javax.swing.JLabel iconBox;
