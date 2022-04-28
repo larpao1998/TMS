@@ -19,6 +19,12 @@ public class homePage extends javax.swing.JFrame {
     public homePage() {
         initComponents();
         mainPanel.setBackground(new Color(0, 0, 0, 64));
+        menuPanel.setBackground(new Color(0, 0, 0, 64));
+        addButton.setBackground(new Color(0, 0, 0, 64));
+        modifyButton.setBackground(new Color(0, 0, 0, 64));
+        deleteButton.setBackground(new Color(0, 0, 0, 64));
+        inquireButton.setBackground(new Color(0, 0, 0, 64));
+        signoutButton.setBackground(new Color(0, 0, 0, 64));
     }
 
     /**
@@ -31,23 +37,24 @@ public class homePage extends javax.swing.JFrame {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        menuPanel = new javax.swing.JPanel();
         iconBox = new javax.swing.JLabel();
+        exit = new javax.swing.JLabel();
+        mainPanel = new javax.swing.JPanel();
+        menuPanel = new javax.swing.JPanel();
         addButton = new javax.swing.JButton();
         modifyButton = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
         inquireButton = new javax.swing.JButton();
         signoutButton = new javax.swing.JButton();
-        mainPanel = new javax.swing.JPanel();
-        exit = new javax.swing.JLabel();
         bgPhoto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(859, 479));
 
-        bg.setBackground(new java.awt.Color(216, 174, 144));
-        bg.setPreferredSize(new java.awt.Dimension(859, 479));
+        bg.setBackground(new java.awt.Color(247, 235, 227));
+        bg.setMinimumSize(new java.awt.Dimension(850, 450));
+        bg.setPreferredSize(new java.awt.Dimension(860, 500));
         bg.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 bgMouseDragged(evt);
@@ -60,105 +67,17 @@ public class homePage extends javax.swing.JFrame {
         });
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        menuPanel.setBackground(new java.awt.Color(132, 97, 72));
-        menuPanel.setPreferredSize(new java.awt.Dimension(286, 479));
-
         iconBox.setForeground(new java.awt.Color(255, 255, 255));
         iconBox.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexandre\\Documents\\NetBeansProjects\\Images\\citynoBG.png")); // NOI18N
+        bg.add(iconBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
 
-        addButton.setBackground(new java.awt.Color(109, 81, 59));
-        addButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        addButton.setForeground(new java.awt.Color(242, 242, 242));
-        addButton.setText("ADD");
-        addButton.setBorder(null);
-        addButton.setPreferredSize(new java.awt.Dimension(39, 40));
-        addButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addButtonActionPerformed(evt);
+        exit.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexandre\\Documents\\NetBeansProjects\\Images\\icons8-x-24.png")); // NOI18N
+        exit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exitMouseClicked(evt);
             }
         });
-
-        modifyButton.setBackground(new java.awt.Color(109, 81, 59));
-        modifyButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        modifyButton.setForeground(new java.awt.Color(242, 242, 242));
-        modifyButton.setText("MODIFY");
-        modifyButton.setBorder(null);
-        modifyButton.setPreferredSize(new java.awt.Dimension(73, 40));
-        modifyButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modifyButtonActionPerformed(evt);
-            }
-        });
-
-        deleteButton.setBackground(new java.awt.Color(109, 81, 59));
-        deleteButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        deleteButton.setForeground(new java.awt.Color(242, 242, 242));
-        deleteButton.setText("DELETE");
-        deleteButton.setBorder(null);
-        deleteButton.setPreferredSize(new java.awt.Dimension(69, 40));
-        deleteButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteButtonActionPerformed(evt);
-            }
-        });
-
-        inquireButton.setBackground(new java.awt.Color(109, 81, 59));
-        inquireButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        inquireButton.setForeground(new java.awt.Color(242, 242, 242));
-        inquireButton.setText("INQUIRE");
-        inquireButton.setBorder(null);
-        inquireButton.setPreferredSize(new java.awt.Dimension(78, 40));
-        inquireButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inquireButtonActionPerformed(evt);
-            }
-        });
-
-        signoutButton.setBackground(new java.awt.Color(109, 81, 59));
-        signoutButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        signoutButton.setForeground(new java.awt.Color(242, 242, 242));
-        signoutButton.setText("SIGN OUT");
-        signoutButton.setBorder(null);
-        signoutButton.setPreferredSize(new java.awt.Dimension(78, 40));
-        signoutButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                signoutButtonActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
-        menuPanel.setLayout(menuPanelLayout);
-        menuPanelLayout.setHorizontalGroup(
-            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menuPanelLayout.createSequentialGroup()
-                .addGap(92, 92, 92)
-                .addComponent(iconBox)
-                .addContainerGap(94, Short.MAX_VALUE))
-            .addComponent(addButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(modifyButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(deleteButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(inquireButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(signoutButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        menuPanelLayout.setVerticalGroup(
-            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menuPanelLayout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(iconBox)
-                .addGap(36, 36, 36)
-                .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(modifyButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(inquireButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(signoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        bg.add(menuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        bg.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(835, 0, -1, -1));
 
         mainPanel.setBackground(new java.awt.Color(247, 235, 227));
 
@@ -175,26 +94,108 @@ public class homePage extends javax.swing.JFrame {
 
         bg.add(mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 30, -1, -1));
 
-        exit.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexandre\\Documents\\NetBeansProjects\\Images\\icons8-x-24.png")); // NOI18N
-        exit.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                exitMouseClicked(evt);
+        menuPanel.setPreferredSize(new java.awt.Dimension(260, 434));
+
+        addButton.setBackground(new java.awt.Color(109, 81, 59));
+        addButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        addButton.setForeground(new java.awt.Color(242, 242, 242));
+        addButton.setText("ADD");
+        addButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        addButton.setPreferredSize(new java.awt.Dimension(39, 40));
+        addButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addButtonActionPerformed(evt);
             }
         });
-        bg.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(835, 0, -1, -1));
 
-        bgPhoto.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexandre\\Documents\\NetBeansProjects\\Images\\skyline3.jpg")); // NOI18N
-        bg.add(bgPhoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 570, 480));
+        modifyButton.setBackground(new java.awt.Color(109, 81, 59));
+        modifyButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        modifyButton.setForeground(new java.awt.Color(242, 242, 242));
+        modifyButton.setText("MODIFY");
+        modifyButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        modifyButton.setPreferredSize(new java.awt.Dimension(73, 40));
+        modifyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modifyButtonActionPerformed(evt);
+            }
+        });
+
+        deleteButton.setBackground(new java.awt.Color(109, 81, 59));
+        deleteButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        deleteButton.setForeground(new java.awt.Color(242, 242, 242));
+        deleteButton.setText("DELETE");
+        deleteButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        deleteButton.setPreferredSize(new java.awt.Dimension(69, 40));
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
+
+        inquireButton.setBackground(new java.awt.Color(109, 81, 59));
+        inquireButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        inquireButton.setForeground(new java.awt.Color(242, 242, 242));
+        inquireButton.setText("INQUIRE");
+        inquireButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        inquireButton.setPreferredSize(new java.awt.Dimension(78, 40));
+        inquireButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inquireButtonActionPerformed(evt);
+            }
+        });
+
+        signoutButton.setBackground(new java.awt.Color(109, 81, 59));
+        signoutButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        signoutButton.setForeground(new java.awt.Color(242, 242, 242));
+        signoutButton.setText("SIGN OUT");
+        signoutButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        signoutButton.setPreferredSize(new java.awt.Dimension(78, 40));
+        signoutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signoutButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
+        menuPanel.setLayout(menuPanelLayout);
+        menuPanelLayout.setHorizontalGroup(
+            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(addButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(modifyButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(deleteButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(inquireButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+            .addComponent(signoutButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        menuPanelLayout.setVerticalGroup(
+            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createSequentialGroup()
+                .addContainerGap(140, Short.MAX_VALUE)
+                .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(modifyButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(inquireButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(signoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(90, 90, 90))
+        );
+
+        bg.add(menuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 260, 430));
+
+        bgPhoto.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexandre\\Documents\\NetBeansProjects\\Images\\skyline860x500.jpg")); // NOI18N
+        bg.add(bgPhoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 871, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
