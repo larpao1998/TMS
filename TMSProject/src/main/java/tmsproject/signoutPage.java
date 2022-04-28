@@ -4,15 +4,17 @@
  */
 package tmsproject;
 
+import java.awt.Color;
 /**
  *
  * @author Alexandre
  */
 public class signoutPage extends javax.swing.JFrame {
 
-   
+    int x,y;
+    
     /**
-     * Creates new form homePage
+     * Creates new form loginPage
      */
     public signoutPage() {
         initComponents();
@@ -28,162 +30,76 @@ public class signoutPage extends javax.swing.JFrame {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        menuPanel = new javax.swing.JPanel();
-        iconBox = new javax.swing.JLabel();
-        addButton = new javax.swing.JButton();
-        modifyButton = new javax.swing.JButton();
-        deleteButton = new javax.swing.JButton();
-        inquireButton = new javax.swing.JButton();
-        signoutButton = new javax.swing.JButton();
-        mainPanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        exit = new javax.swing.JLabel();
+        topLabel = new javax.swing.JLabel();
+        yesButton = new javax.swing.JButton();
+        noButton = new javax.swing.JButton();
+        bgPhoto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(16, 53, 94));
+        setUndecorated(true);
 
-        bg.setBackground(new java.awt.Color(69, 119, 175));
-        bg.setPreferredSize(new java.awt.Dimension(859, 479));
-
-        menuPanel.setBackground(new java.awt.Color(36, 62, 91));
-        menuPanel.setPreferredSize(new java.awt.Dimension(286, 479));
-
-        iconBox.setForeground(new java.awt.Color(255, 255, 255));
-        iconBox.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexandre\\Documents\\NetBeansProjects\\Images\\citynoBG.png")); // NOI18N
-
-        addButton.setBackground(new java.awt.Color(42, 72, 107));
-        addButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        addButton.setForeground(new java.awt.Color(242, 242, 242));
-        addButton.setText("ADD");
-        addButton.setBorder(null);
-        addButton.setPreferredSize(new java.awt.Dimension(39, 40));
-        addButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addButtonActionPerformed(evt);
+        bg.setBackground(new java.awt.Color(204, 204, 204));
+        bg.setPreferredSize(new java.awt.Dimension(621, 344));
+        bg.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                bgMousePressed(evt);
             }
         });
+        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        modifyButton.setBackground(new java.awt.Color(42, 72, 107));
-        modifyButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        modifyButton.setForeground(new java.awt.Color(242, 242, 242));
-        modifyButton.setText("MODIFY");
-        modifyButton.setBorder(null);
-        modifyButton.setPreferredSize(new java.awt.Dimension(73, 40));
-        modifyButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modifyButtonActionPerformed(evt);
+        exit.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexandre\\Documents\\GitHub\\TMS\\Images\\icons8-x-24.png")); // NOI18N
+        exit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exitMouseClicked(evt);
             }
         });
+        bg.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 0, -1, -1));
 
-        deleteButton.setBackground(new java.awt.Color(42, 72, 107));
-        deleteButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        deleteButton.setForeground(new java.awt.Color(242, 242, 242));
-        deleteButton.setText("DELETE");
-        deleteButton.setBorder(null);
-        deleteButton.setPreferredSize(new java.awt.Dimension(69, 40));
-        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+        topLabel.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        topLabel.setForeground(new java.awt.Color(242, 242, 242));
+        topLabel.setText("Log back in");
+        bg.add(topLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, -1, -1));
+
+        yesButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        yesButton.setText("YES");
+        yesButton.setPreferredSize(new java.awt.Dimension(72, 40));
+        yesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteButtonActionPerformed(evt);
+                yesButtonActionPerformed(evt);
             }
         });
+        bg.add(yesButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 130, -1));
 
-        inquireButton.setBackground(new java.awt.Color(42, 72, 107));
-        inquireButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        inquireButton.setForeground(new java.awt.Color(242, 242, 242));
-        inquireButton.setText("INQUIRE");
-        inquireButton.setBorder(null);
-        inquireButton.setPreferredSize(new java.awt.Dimension(78, 40));
-        inquireButton.addActionListener(new java.awt.event.ActionListener() {
+        noButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        noButton.setText("NO");
+        noButton.setPreferredSize(new java.awt.Dimension(72, 40));
+        noButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inquireButtonActionPerformed(evt);
+                noButtonActionPerformed(evt);
             }
         });
+        bg.add(noButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 250, 130, -1));
 
-        signoutButton.setBackground(new java.awt.Color(42, 72, 107));
-        signoutButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        signoutButton.setForeground(new java.awt.Color(242, 242, 242));
-        signoutButton.setText("SIGN OUT");
-        signoutButton.setBorder(null);
-        signoutButton.setPreferredSize(new java.awt.Dimension(78, 40));
-        signoutButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                signoutButtonActionPerformed(evt);
+        bgPhoto.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexandre\\Documents\\GitHub\\TMS\\Images\\skyline2.jpg")); // NOI18N
+        bgPhoto.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                bgPhotoMouseDragged(evt);
             }
         });
-
-        javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
-        menuPanel.setLayout(menuPanelLayout);
-        menuPanelLayout.setHorizontalGroup(
-            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menuPanelLayout.createSequentialGroup()
-                .addGap(92, 92, 92)
-                .addComponent(iconBox)
-                .addContainerGap(94, Short.MAX_VALUE))
-            .addComponent(addButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(modifyButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(deleteButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(inquireButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(signoutButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        menuPanelLayout.setVerticalGroup(
-            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menuPanelLayout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(iconBox)
-                .addGap(36, 36, 36)
-                .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(modifyButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(inquireButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(signoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        jLabel1.setText("SIGN OUT PAGE");
-
-        javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
-        mainPanel.setLayout(mainPanelLayout);
-        mainPanelLayout.setHorizontalGroup(
-            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mainPanelLayout.createSequentialGroup()
-                .addGap(262, 262, 262)
-                .addComponent(jLabel1)
-                .addContainerGap(227, Short.MAX_VALUE))
-        );
-        mainPanelLayout.setVerticalGroup(
-            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mainPanelLayout.createSequentialGroup()
-                .addGap(135, 135, 135)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
-        bg.setLayout(bgLayout);
-        bgLayout.setHorizontalGroup(
-            bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bgLayout.createSequentialGroup()
-                .addComponent(menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        bgLayout.setVerticalGroup(
-            bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(menuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(bgLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        bgPhoto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                bgPhotoMousePressed(evt);
+            }
+        });
+        bg.add(bgPhoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 871, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,30 +110,39 @@ public class signoutPage extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void modifyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyButtonActionPerformed
+    private void exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseClicked
         // TODO add your handling code here:
-        new modifyPage().setVisible(true);
-    }//GEN-LAST:event_modifyButtonActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_exitMouseClicked
 
-    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+    private void bgMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bgMousePressed
         // TODO add your handling code here:
-        new deletePage().setVisible(true);
-    }//GEN-LAST:event_deleteButtonActionPerformed
+        
+    }//GEN-LAST:event_bgMousePressed
 
-    private void inquireButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inquireButtonActionPerformed
+    private void bgPhotoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bgPhotoMousePressed
         // TODO add your handling code here:
-        new inquirePage().setVisible(true);
-    }//GEN-LAST:event_inquireButtonActionPerformed
+        x = evt.getX();
+        y = evt.getY();
+    }//GEN-LAST:event_bgPhotoMousePressed
 
-    private void signoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signoutButtonActionPerformed
+    private void bgPhotoMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bgPhotoMouseDragged
         // TODO add your handling code here:
-        new signoutPage().setVisible(true);
-    }//GEN-LAST:event_signoutButtonActionPerformed
+        int xx = evt.getXOnScreen();
+        int yy = evt.getYOnScreen();
+        this.setLocation(xx-x, yy-y);
+    }//GEN-LAST:event_bgPhotoMouseDragged
 
-    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
+    private void yesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yesButtonActionPerformed
         // TODO add your handling code here:
-        new addPage().setVisible(true);
-    }//GEN-LAST:event_addButtonActionPerformed
+        setVisible(false);
+        new loginPage().setVisible(true);
+    }//GEN-LAST:event_yesButtonActionPerformed
+
+    private void noButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noButtonActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_noButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -256,16 +181,11 @@ public class signoutPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addButton;
     private javax.swing.JPanel bg;
-    private javax.swing.JButton deleteButton;
-    private javax.swing.JLabel iconBox;
-    private javax.swing.JButton inquireButton;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel mainPanel;
-    private javax.swing.JPanel menuPanel;
-    private javax.swing.JButton modifyButton;
-    private javax.swing.JButton signoutButton;
+    private javax.swing.JLabel bgPhoto;
+    private javax.swing.JLabel exit;
+    private javax.swing.JButton noButton;
+    private javax.swing.JLabel topLabel;
+    private javax.swing.JButton yesButton;
     // End of variables declaration//GEN-END:variables
 }
-
