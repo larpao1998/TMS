@@ -5,11 +5,16 @@
 package tmsproject;
 
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Alexandre
  */
-public class loginPage extends javax.swing.JFrame {
+public class loginPage extends TMSProject {
 
     int x,y;
     
@@ -38,6 +43,8 @@ public class loginPage extends javax.swing.JFrame {
         username = new javax.swing.JTextField();
         password = new javax.swing.JPasswordField();
         login = new javax.swing.JButton();
+        userSeparator = new javax.swing.JSeparator();
+        passSeparator = new javax.swing.JSeparator();
         bgPhoto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -70,12 +77,10 @@ public class loginPage extends javax.swing.JFrame {
         username.setBackground(new java.awt.Color(237, 237, 237));
         username.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         username.setForeground(new java.awt.Color(255, 255, 255));
-        username.setText("username");
         username.setBorder(null);
         bg.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 200, 30));
 
         password.setForeground(new java.awt.Color(255, 255, 255));
-        password.setText("jPasswordField1");
         password.setBorder(null);
         password.setPreferredSize(new java.awt.Dimension(90, 27));
         password.addActionListener(new java.awt.event.ActionListener() {
@@ -94,7 +99,21 @@ public class loginPage extends javax.swing.JFrame {
         });
         bg.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 110, -1));
 
-        bgPhoto.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexandre\\Documents\\GitHub\\TMS\\Images\\skyline2.jpg")); // NOI18N
+        userSeparator.setBackground(new java.awt.Color(255, 255, 255));
+        userSeparator.setForeground(new java.awt.Color(255, 255, 255));
+        userSeparator.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        userSeparator.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        userSeparator.setPreferredSize(new java.awt.Dimension(80, 10));
+        bg.add(userSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 127, 205, 35));
+
+        passSeparator.setBackground(new java.awt.Color(255, 255, 255));
+        passSeparator.setForeground(new java.awt.Color(255, 255, 255));
+        passSeparator.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        passSeparator.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        passSeparator.setPreferredSize(new java.awt.Dimension(80, 10));
+        bg.add(passSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 177, 205, 35));
+
+        bgPhoto.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexandre\\Documents\\GitHub\\TMS\\Images\\citySkylineDark621x344.png")); // NOI18N
         bgPhoto.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 bgPhotoMouseDragged(evt);
@@ -151,8 +170,37 @@ public class loginPage extends javax.swing.JFrame {
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
-        setVisible(false);
-        new homePage().setVisible(true);
+        //setVisible(false);
+        //new homePage().setVisible(true);
+        String url ="jdbc:mysql://localhost:3306/tms database";
+        String user = "TMS_User";
+        String pass = "TMS2022";
+        
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(url, user, pass);
+            String sql = "select * from users where username=? and password=?";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setString(1, username.getText());
+            pst.setString(2, password.getText());
+            ResultSet rs = pst.executeQuery();
+            
+            if(rs.next()){
+                JOptionPane.showMessageDialog(null, "Login Successful");
+                setVisible(false);
+                new homePage().setVisible(true);
+            }//END if statement
+            else {
+                JOptionPane.showMessageDialog(null, "Username or Password is incorrect");
+                username.setText("");
+                password.setText("");
+            }//END else statement 
+            conn.close();
+            
+            
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }//END catch
     }//GEN-LAST:event_loginActionPerformed
 
     /**
@@ -195,8 +243,10 @@ public class loginPage extends javax.swing.JFrame {
     private javax.swing.JLabel bgPhoto;
     private javax.swing.JLabel exit;
     private javax.swing.JButton login;
+    private javax.swing.JSeparator passSeparator;
     private javax.swing.JPasswordField password;
     private javax.swing.JLabel passwordIcon;
+    private javax.swing.JSeparator userSeparator;
     private javax.swing.JTextField username;
     private javax.swing.JLabel usernameIcon;
     // End of variables declaration//GEN-END:variables

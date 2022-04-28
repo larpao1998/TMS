@@ -26,7 +26,7 @@ public class TMSProject extends javax.swing.JFrame{
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection(url, username, password);
-            System.out.println("Successfull" + url);
+            System.out.println("Successfully connected to " + url);
             
         } catch (ClassNotFoundException e){
             e.printStackTrace();

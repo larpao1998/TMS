@@ -60,7 +60,7 @@ public class signoutPage extends javax.swing.JFrame {
         topLabel.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         topLabel.setForeground(new java.awt.Color(242, 242, 242));
         topLabel.setText("Log back in");
-        bg.add(topLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, -1, -1));
+        bg.add(topLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, -1, -1));
 
         yesButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         yesButton.setText("YES");
@@ -82,7 +82,7 @@ public class signoutPage extends javax.swing.JFrame {
         });
         bg.add(noButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 250, 130, -1));
 
-        bgPhoto.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexandre\\Documents\\GitHub\\TMS\\Images\\skyline2.jpg")); // NOI18N
+        bgPhoto.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexandre\\Documents\\GitHub\\TMS\\Images\\citySkylineDark621x344.png")); // NOI18N
         bgPhoto.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 bgPhotoMouseDragged(evt);
