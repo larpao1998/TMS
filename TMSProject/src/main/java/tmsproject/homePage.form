@@ -64,7 +64,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Alexandre\Documents\NetBeansProjects\Images\citynoBG.png"/>
+              <Image iconType="2" name="C:\Users\Alexandre\Documents\GitHub\TMS\Images\citynoBG.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -76,7 +76,7 @@
         <Component class="javax.swing.JLabel" name="exit">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Alexandre\Documents\NetBeansProjects\Images\icons8-x-24.png"/>
+              <Image iconType="2" name="C:\Users\Alexandre\Documents\GitHub\TMS\Images\icons8-x-24.png"/>
             </Property>
           </Properties>
           <Events>
@@ -284,7 +284,7 @@
         <Component class="javax.swing.JLabel" name="bgPhoto">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Alexandre\Documents\NetBeansProjects\Images\skyline860x500.jpg"/>
+              <Image iconType="2" name="C:\Users\Alexandre\Documents\GitHub\TMS\Images\skyline860x500.jpg"/>
             </Property>
           </Properties>
           <Constraints>

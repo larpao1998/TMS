@@ -33,8 +33,8 @@ public class loginPage extends javax.swing.JFrame {
 
         bg = new javax.swing.JPanel();
         exit = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        usernameIcon = new javax.swing.JLabel();
+        passwordIcon = new javax.swing.JLabel();
         username = new javax.swing.JTextField();
         password = new javax.swing.JPasswordField();
         login = new javax.swing.JButton();
@@ -45,6 +45,7 @@ public class loginPage extends javax.swing.JFrame {
         setUndecorated(true);
 
         bg.setBackground(new java.awt.Color(204, 204, 204));
+        bg.setPreferredSize(new java.awt.Dimension(621, 344));
         bg.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 bgMousePressed(evt);
@@ -52,7 +53,7 @@ public class loginPage extends javax.swing.JFrame {
         });
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        exit.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexandre\\Documents\\NetBeansProjects\\Images\\icons8-x-24.png")); // NOI18N
+        exit.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexandre\\Documents\\GitHub\\TMS\\Images\\icons8-x-24.png")); // NOI18N
         exit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitMouseClicked(evt);
@@ -60,11 +61,11 @@ public class loginPage extends javax.swing.JFrame {
         });
         bg.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 0, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexandre\\Documents\\NetBeansProjects\\Images\\usernameIcon2.png")); // NOI18N
-        bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 130, -1, -1));
+        usernameIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexandre\\Documents\\GitHub\\TMS\\Images\\usernameIcon2.png")); // NOI18N
+        bg.add(usernameIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 130, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexandre\\Documents\\NetBeansProjects\\Images\\passwordIcon.png")); // NOI18N
-        bg.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 180, -1, -1));
+        passwordIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexandre\\Documents\\GitHub\\TMS\\Images\\passwordIcon.png")); // NOI18N
+        bg.add(passwordIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 180, -1, -1));
 
         username.setBackground(new java.awt.Color(237, 237, 237));
         username.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -93,7 +94,7 @@ public class loginPage extends javax.swing.JFrame {
         });
         bg.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 110, -1));
 
-        bgPhoto.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexandre\\Documents\\NetBeansProjects\\Images\\skyline2.jpg")); // NOI18N
+        bgPhoto.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alexandre\\Documents\\GitHub\\TMS\\Images\\skyline2.jpg")); // NOI18N
         bgPhoto.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 bgPhotoMouseDragged(evt);
@@ -193,10 +194,10 @@ public class loginPage extends javax.swing.JFrame {
     private javax.swing.JPanel bg;
     private javax.swing.JLabel bgPhoto;
     private javax.swing.JLabel exit;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton login;
     private javax.swing.JPasswordField password;
+    private javax.swing.JLabel passwordIcon;
     private javax.swing.JTextField username;
+    private javax.swing.JLabel usernameIcon;
     // End of variables declaration//GEN-END:variables
 }
