@@ -10,6 +10,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -76,6 +77,7 @@ public class addPage extends javax.swing.JFrame {
         attributeMenu = new javax.swing.JComboBox<>();
         questionLabel = new javax.swing.JLabel();
         selectAttLabel = new javax.swing.JLabel();
+        cCode1 = new javax.swing.JTextField();
         menuPanel = new javax.swing.JPanel();
         addButton = new javax.swing.JButton();
         modifyButton = new javax.swing.JButton();
@@ -125,6 +127,7 @@ public class addPage extends javax.swing.JFrame {
         });
 
         cCode.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        cCode.setText("Country Code");
 
         submitButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         submitButton.setText("Submit");
@@ -144,6 +147,14 @@ public class addPage extends javax.swing.JFrame {
         selectAttLabel.setForeground(new java.awt.Color(242, 242, 242));
         selectAttLabel.setText("Select attribute: ");
 
+        cCode1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        cCode1.setText("Country Name");
+        cCode1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cCode1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
@@ -155,22 +166,22 @@ public class addPage extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(58, Short.MAX_VALUE)
                         .addComponent(questionLabel)
                         .addGap(60, 60, 60))
                     .addGroup(mainPanelLayout.createSequentialGroup()
                         .addGap(44, 44, 44)
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(mainPanelLayout.createSequentialGroup()
-                                .addComponent(selectAttLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(attributeMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(selectAttLabel)
+                            .addComponent(attributeMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(entityMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                        .addComponent(cCode, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(8, 8, 8)))
-                .addGap(0, 0, 0))
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cCode1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cCode, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(41, 41, 41))))
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,7 +196,9 @@ public class addPage extends javax.swing.JFrame {
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(attributeMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 173, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(cCode1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
                 .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41))
         );
@@ -508,11 +521,12 @@ public class addPage extends javax.swing.JFrame {
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         // TODO add your handling code here:
-        String entity = (String) entityMenu.getSelectedItem();
-        String atribute = (String) attributeMenu.getSelectedItem();
-        
         
     }//GEN-LAST:event_submitButtonActionPerformed
+
+    private void cCode1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cCode1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cCode1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -556,6 +570,7 @@ public class addPage extends javax.swing.JFrame {
     private javax.swing.JPanel bg;
     private javax.swing.JLabel bgPhoto;
     private javax.swing.JTextField cCode;
+    private javax.swing.JTextField cCode1;
     private javax.swing.JButton deleteButton;
     private javax.swing.JComboBox<String> entityMenu;
     private javax.swing.JLabel exit;

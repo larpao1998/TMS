@@ -88,6 +88,11 @@ public class loginPage extends TMSProject {
                 passwordActionPerformed(evt);
             }
         });
+        password.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                passwordKeyPressed(evt);
+            }
+        });
         bg.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 200, 30));
 
         login.setText("Login");
@@ -202,6 +207,10 @@ public class loginPage extends TMSProject {
             JOptionPane.showMessageDialog(null, e);
         }//END catch
     }//GEN-LAST:event_loginActionPerformed
+
+    private void passwordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordKeyPressed
 
     /**
      * @param args the command line arguments
