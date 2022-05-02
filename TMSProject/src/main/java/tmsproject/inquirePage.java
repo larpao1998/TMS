@@ -71,10 +71,7 @@ public class inquirePage extends javax.swing.JFrame {
         exit = new javax.swing.JLabel();
         mainPanel = new javax.swing.JPanel();
         entityMenu = new javax.swing.JComboBox<>();
-        submitButton = new javax.swing.JButton();
-        attributeMenu = new javax.swing.JComboBox<>();
         questionLabel = new javax.swing.JLabel();
-        selectAttLabel = new javax.swing.JLabel();
         menuPanel = new javax.swing.JPanel();
         addButton = new javax.swing.JButton();
         modifyButton = new javax.swing.JButton();
@@ -124,44 +121,18 @@ public class inquirePage extends javax.swing.JFrame {
             }
         });
 
-        submitButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        submitButton.setText("Submit");
-        submitButton.setMinimumSize(new java.awt.Dimension(75, 40));
-        submitButton.setPreferredSize(new java.awt.Dimension(75, 40));
-        submitButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitButtonActionPerformed(evt);
-            }
-        });
-
         questionLabel.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         questionLabel.setForeground(new java.awt.Color(242, 242, 242));
         questionLabel.setText("What entity would you like to inquire?");
-
-        selectAttLabel.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        selectAttLabel.setForeground(new java.awt.Color(242, 242, 242));
-        selectAttLabel.setText("Select attribute: ");
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mainPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(219, 219, 219))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                        .addContainerGap(45, Short.MAX_VALUE)
-                        .addComponent(questionLabel)
-                        .addGap(60, 60, 60))
-                    .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(selectAttLabel)
-                            .addComponent(attributeMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(45, Short.MAX_VALUE)
+                .addComponent(questionLabel)
+                .addGap(60, 60, 60)
                 .addComponent(entityMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         mainPanelLayout.setVerticalGroup(
@@ -171,13 +142,7 @@ public class inquirePage extends javax.swing.JFrame {
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(entityMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(questionLabel))
-                .addGap(105, 105, 105)
-                .addComponent(selectAttLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(attributeMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 174, Short.MAX_VALUE)
-                .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41))
+                .addContainerGap(403, Short.MAX_VALUE))
         );
 
         bg.add(mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 30, 550, -1));
@@ -417,14 +382,6 @@ public class inquirePage extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_entityMenuActionPerformed
 
-    private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
-        // TODO add your handling code here:
-        String entity = (String) entityMenu.getSelectedItem();
-        String atribute = (String) attributeMenu.getSelectedItem();
-        
-        
-    }//GEN-LAST:event_submitButtonActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -477,7 +434,6 @@ public class inquirePage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
-    private javax.swing.JComboBox<String> attributeMenu;
     private javax.swing.JPanel bg;
     private javax.swing.JLabel bgPhoto;
     private javax.swing.JButton deleteButton;
@@ -489,9 +445,7 @@ public class inquirePage extends javax.swing.JFrame {
     private javax.swing.JPanel menuPanel;
     private javax.swing.JButton modifyButton;
     private javax.swing.JLabel questionLabel;
-    private javax.swing.JLabel selectAttLabel;
     private javax.swing.JButton signoutButton;
-    private javax.swing.JButton submitButton;
     // End of variables declaration//GEN-END:variables
 }
 
