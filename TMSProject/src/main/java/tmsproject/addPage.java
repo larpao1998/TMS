@@ -72,12 +72,7 @@ public class addPage extends javax.swing.JFrame {
         exit = new javax.swing.JLabel();
         mainPanel = new javax.swing.JPanel();
         entityMenu = new javax.swing.JComboBox<>();
-        cCode = new javax.swing.JTextField();
-        submitButton = new javax.swing.JButton();
-        attributeMenu = new javax.swing.JComboBox<>();
         questionLabel = new javax.swing.JLabel();
-        selectAttLabel = new javax.swing.JLabel();
-        cCode1 = new javax.swing.JTextField();
         menuPanel = new javax.swing.JPanel();
         addButton = new javax.swing.JButton();
         modifyButton = new javax.swing.JButton();
@@ -126,62 +121,19 @@ public class addPage extends javax.swing.JFrame {
             }
         });
 
-        cCode.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        cCode.setText("Country Code");
-
-        submitButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        submitButton.setText("Submit");
-        submitButton.setMinimumSize(new java.awt.Dimension(75, 40));
-        submitButton.setPreferredSize(new java.awt.Dimension(75, 40));
-        submitButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitButtonActionPerformed(evt);
-            }
-        });
-
         questionLabel.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         questionLabel.setForeground(new java.awt.Color(242, 242, 242));
         questionLabel.setText("What entity would you like to add?");
-
-        selectAttLabel.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        selectAttLabel.setForeground(new java.awt.Color(242, 242, 242));
-        selectAttLabel.setText("Select attribute: ");
-
-        cCode1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        cCode1.setText("Country Name");
-        cCode1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cCode1ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mainPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(219, 219, 219))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                        .addContainerGap(58, Short.MAX_VALUE)
-                        .addComponent(questionLabel)
-                        .addGap(60, 60, 60))
-                    .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(selectAttLabel)
-                            .addComponent(attributeMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(entityMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cCode1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cCode, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(41, 41, 41))))
+                .addContainerGap(58, Short.MAX_VALUE)
+                .addComponent(questionLabel)
+                .addGap(60, 60, 60)
+                .addComponent(entityMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,17 +142,7 @@ public class addPage extends javax.swing.JFrame {
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(entityMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(questionLabel))
-                .addGap(105, 105, 105)
-                .addComponent(selectAttLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(attributeMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(cCode1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
-                .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41))
+                .addContainerGap(402, Short.MAX_VALUE))
         );
 
         bg.add(mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 30, 540, -1));
@@ -365,152 +307,73 @@ public class addPage extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
             if(entityMenu.getSelectedItem().equals("Countries")) {
-                attributeMenu.removeAllItems();
-                attributeMenu.addItem("Country Code");
-                attributeMenu.addItem("Country Name");
-                attributeMenu.addItem("Country Abbreviation");
-                attributeMenu.setSelectedItem(null);
+                setVisible(false);
+                new countryAddPage().setVisible(true);
             }//END if statement
             else
             if(entityMenu.getSelectedItem().equals("Province/States")) {
-                attributeMenu.removeAllItems();
-                attributeMenu.addItem("Province Code");
-                attributeMenu.addItem("Province Name");
-                attributeMenu.addItem("Province Reference Country");
-                attributeMenu.setSelectedItem(null);
+                setVisible(false);
+                new provinceInquirePage().setVisible(true);
             }//END if statement
             else
             if(entityMenu.getSelectedItem().equals("Locations")) {
-                attributeMenu.removeAllItems();
-                attributeMenu.addItem("Location Code");
-                attributeMenu.addItem("Location Name");
-                attributeMenu.addItem("Location Type (Town, City, or Country)");
-                attributeMenu.addItem("Location Reference Province");
-                attributeMenu.addItem("Location's Reference Location");
-                attributeMenu.setSelectedItem(null);
+                setVisible(false);
+                new locationInquirePage().setVisible(true);
             }//END if statement
             else
             if(entityMenu.getSelectedItem().equals("Streets/Roads")) {
-                attributeMenu.removeAllItems();
-                attributeMenu.addItem("Street/Road Code");
-                attributeMenu.addItem("Street/Road Name");
-                attributeMenu.addItem("Street/Road Distance");
-                attributeMenu.addItem("Street/Road Starting Landmark");
-                attributeMenu.addItem("Street/Road Ending Landmark");
-                attributeMenu.addItem("Street/Road Comment");
-                attributeMenu.setSelectedItem(null);
+                setVisible(false);
+                new streetroadsInquirePage().setVisible(true);
             }//END if statement
             else
             if(entityMenu.getSelectedItem().equals("Transportation Custodians")) {
-                attributeMenu.removeAllItems();
-                attributeMenu.addItem("Custodian Code");
-                attributeMenu.addItem("Custodian First Name");
-                attributeMenu.addItem("Custodian Middle Initial");
-                attributeMenu.addItem("Custodian Last Name");
-                attributeMenu.addItem("Custodian Classification");
-                attributeMenu.addItem("Custodian Telephone 1");
-                attributeMenu.addItem("Custodian Telephone 2");
-                attributeMenu.addItem("Custodian Email");
-                attributeMenu.addItem("Custodian Address Street");
-                attributeMenu.addItem("Custodian Address Location Code");
-                attributeMenu.addItem("Custodian Address Province Code");
-                attributeMenu.addItem("Custodian Zip Code");
-                attributeMenu.setSelectedItem(null);
+                setVisible(false);
+                new transportationCustodianInquirePage().setVisible(true);
             }//END if statement
             else
             if(entityMenu.getSelectedItem().equals("Transportation Vehicles")) {
-                attributeMenu.removeAllItems();
-                attributeMenu.addItem("Vehicle Code");
-                attributeMenu.addItem("Vehicle Descriptive Name");
-                attributeMenu.addItem("Vehicle Identification Number");
-                attributeMenu.addItem("Vehicle Make");
-                attributeMenu.addItem("Vehicle Model");
-                attributeMenu.addItem("Vehicle Type");
-                attributeMenu.addItem("Vehicle Narrative");
-                attributeMenu.setSelectedItem(null);
+                setVisible(false);
+                new transportationVehicleInquirePage().setVisible(true);
             }//END if statement
             else
             if(entityMenu.getSelectedItem().equals("Route Summaries")) {
-                attributeMenu.removeAllItems();
-                attributeMenu.addItem("Route Code");
-                attributeMenu.addItem("Route Name");
-                attributeMenu.addItem("Route Description");
-                attributeMenu.setSelectedItem(null);
+                setVisible(false);
+                new routeSummaryInquirePage().setVisible(true);
             }
             else
             if(entityMenu.getSelectedItem().equals("Route Details")) {
-                attributeMenu.removeAllItems();
-                attributeMenu.addItem("Route Code");
-                attributeMenu.addItem("Street/Road Code");
-                attributeMenu.addItem("Final Street/Road Flag");
-                attributeMenu.addItem("Distance in Miles");
-                attributeMenu.addItem("Distance in Kilometers");
-                attributeMenu.setSelectedItem(null);
+                setVisible(false);
+                new routeDetailsInquirePage().setVisible(true);
             }
             else
             if(entityMenu.getSelectedItem().equals("Vehicle Maintenance Companies")) {
-                attributeMenu.removeAllItems();
-                attributeMenu.addItem("Company Code");
-                attributeMenu.addItem("Company Name");
-                attributeMenu.addItem("Company Contant Person(s)");
-                attributeMenu.addItem("Company Telephone 1");
-                attributeMenu.addItem("Company Telephone 2");
-                attributeMenu.addItem("Company email");
-                attributeMenu.addItem("Company Address Street");
-                attributeMenu.addItem("Company Address Location Code");
-                attributeMenu.addItem("Company Address Province Code");
-                attributeMenu.addItem("Company Zip Code");
-                attributeMenu.setSelectedItem(null);
+                setVisible(false);
+                new vehicleMaintCompInquirePage().setVisible(true);
             }
             else
             if(entityMenu.getSelectedItem().equals("Vehicle Maintenance Logs")) {
-                attributeMenu.removeAllItems();
-                attributeMenu.addItem("VM Code");
-                attributeMenu.addItem("Vehicle Maintenance Date");
-                attributeMenu.addItem("Vehicle Maintenance Company");
-                attributeMenu.addItem("Vehicle Maintenance Mechanic");
-                attributeMenu.addItem("Vehicle Maintenance Comment");
-                attributeMenu.setSelectedItem(null);
+                setVisible(false);
+                new vehicleMaintLogInquirePage().setVisible(true);
             }
             else
             if(entityMenu.getSelectedItem().equals("Route Schedules")) {
-                attributeMenu.removeAllItems();
-                attributeMenu.addItem("Route Schedule Code");
-                attributeMenu.addItem("Route Schedule Custodian Code");
-                attributeMenu.addItem("Route Schedule Vehicle Code");
-                attributeMenu.addItem("Route Schedule Assigned Route");
-                attributeMenu.addItem("Route Schedule Date");
-                attributeMenu.addItem("Route Schedule Comment");
-                attributeMenu.setSelectedItem(null);
+                setVisible(false);
+                new routeScheduleInquirePage().setVisible(true);
             }
             else
             if(entityMenu.getSelectedItem().equals("Route Execution Logs")) {
-                attributeMenu.removeAllItems();
-                attributeMenu.addItem("Route Schedule Code");
-                attributeMenu.addItem("Route Schedule Custodian Code");
-                attributeMenu.addItem("Route Execution Vehicle Code");
-                attributeMenu.addItem("Route Execution Assigned Route");
-                attributeMenu.addItem("Route Execution Date");
-                attributeMenu.addItem("Route Execution Comment");
-                attributeMenu.setSelectedItem(null);
+                setVisible(false);
+                new routeExecutionLogInquirePage().setVisible(true);
             }
             else
             if(entityMenu.getSelectedItem().equals("Road Incidents Logs")) {
-                attributeMenu.removeAllItems();
-                attributeMenu.addItem("Incident Code");
-                attributeMenu.addItem("Incident Related Custodian Code");
-                attributeMenu.addItem("Incident Route Schedule Code");
-                attributeMenu.addItem("Incident Comment");
-                attributeMenu.setSelectedItem(null);
+                setVisible(false);
+                new roadIncidentLogInquirePage().setVisible(true);
             }
             else
             if(entityMenu.getSelectedItem().equals("Frequently Asked Questions Log")) {
-                attributeMenu.removeAllItems();
-                attributeMenu.addItem("Question Code");
-                attributeMenu.addItem("Question Text");
-                attributeMenu.addItem("Question Response");
-                attributeMenu.addItem("Question Comment");
-                attributeMenu.setSelectedItem(null);
+                setVisible(false);
+                new freqAskedQuestInquirePage().setVisible(true);
             }
         }
         catch(Exception e)
@@ -518,15 +381,6 @@ public class addPage extends javax.swing.JFrame {
             System.out.println(e);
         }
     }//GEN-LAST:event_entityMenuActionPerformed
-
-    private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_submitButtonActionPerformed
-
-    private void cCode1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cCode1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cCode1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -566,11 +420,8 @@ public class addPage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
-    private javax.swing.JComboBox<String> attributeMenu;
     private javax.swing.JPanel bg;
     private javax.swing.JLabel bgPhoto;
-    private javax.swing.JTextField cCode;
-    private javax.swing.JTextField cCode1;
     private javax.swing.JButton deleteButton;
     private javax.swing.JComboBox<String> entityMenu;
     private javax.swing.JLabel exit;
@@ -580,9 +431,7 @@ public class addPage extends javax.swing.JFrame {
     private javax.swing.JPanel menuPanel;
     private javax.swing.JButton modifyButton;
     private javax.swing.JLabel questionLabel;
-    private javax.swing.JLabel selectAttLabel;
     private javax.swing.JButton signoutButton;
-    private javax.swing.JButton submitButton;
     // End of variables declaration//GEN-END:variables
 }
 
