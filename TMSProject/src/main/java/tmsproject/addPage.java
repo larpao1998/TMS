@@ -313,12 +313,12 @@ public class addPage extends javax.swing.JFrame {
             else
             if(entityMenu.getSelectedItem().equals("Province/States")) {
                 setVisible(false);
-                new provinceInquirePage().setVisible(true);
+                new provinceAddPage().setVisible(true);
             }//END if statement
             else
             if(entityMenu.getSelectedItem().equals("Locations")) {
                 setVisible(false);
-                new locationInquirePage().setVisible(true);
+                new locationAddPage().setVisible(true);
             }//END if statement
             else
             if(entityMenu.getSelectedItem().equals("Streets/Roads")) {
