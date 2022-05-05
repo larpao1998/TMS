@@ -16,12 +16,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Alexandre
  */
-public class streetRoadAddPage extends javax.swing.JFrame {
+public class vehicleMaintLogAddPage extends javax.swing.JFrame {
 
    int x,y;
    Connection conn;
    
-    public streetRoadAddPage() {
+    public vehicleMaintLogAddPage() {
         String url ="jdbc:mysql://localhost:3306/tms database";
         String user = "TMS_User";
         String pass = "TMS2022";
@@ -56,7 +56,7 @@ public class streetRoadAddPage extends javax.swing.JFrame {
     private void tableUpdate(){
         int c;
         
-        String sql = "SELECT * FROM streetsroads";
+        String sql = "SELECT * FROM vehiclemaintenancelog";
         try{
             PreparedStatement pst = conn.prepareStatement(sql);
             ResultSet rs = pst.executeQuery();
@@ -84,15 +84,15 @@ public class streetRoadAddPage extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         table = new javax.swing.JTable();
         add = new javax.swing.JButton();
-        sCode = new javax.swing.JTextField();
-        sName = new javax.swing.JTextField();
-        sDist = new javax.swing.JTextField();
+        vMaintCode = new javax.swing.JTextField();
+        vCode = new javax.swing.JTextField();
+        vMaintDate = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        sLandmark = new javax.swing.JTextField();
-        eLandmark = new javax.swing.JTextField();
-        sComm = new javax.swing.JTextField();
+        vMaintComp = new javax.swing.JTextField();
+        vMaintMech = new javax.swing.JTextField();
+        vMaintComm = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -144,7 +144,7 @@ public class streetRoadAddPage extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Street Code", "Street Name", "Street Distance", "Starting Landmark", "Ending Landmark", "Street Comment"
+                "VM Code", "V Code", "VM Date", "VM Company", "VM Mechanic", "VM Comment"
             }
         ));
         jScrollPane1.setViewportView(table);
@@ -158,41 +158,41 @@ public class streetRoadAddPage extends javax.swing.JFrame {
             }
         });
 
-        sName.addActionListener(new java.awt.event.ActionListener() {
+        vCode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sNameActionPerformed(evt);
+                vCodeActionPerformed(evt);
             }
         });
 
-        sDist.addActionListener(new java.awt.event.ActionListener() {
+        vMaintDate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sDistActionPerformed(evt);
+                vMaintDateActionPerformed(evt);
             }
         });
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Street Code");
+        jLabel1.setText("Vehicle Maint Code");
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Street Name");
+        jLabel4.setText("Vehicle Code");
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Street Distance");
+        jLabel5.setText("Vehicle Maint Date");
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Starting Landmark");
+        jLabel2.setText("Vehicle Maint Company");
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Ending Landmark");
+        jLabel3.setText("Vehicle Maint Mechanic");
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Street Comment");
+        jLabel6.setText("Vehicle Maint Comment");
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
@@ -213,28 +213,28 @@ public class streetRoadAddPage extends javax.swing.JFrame {
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mainPanelLayout.createSequentialGroup()
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sCode, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(vMaintCode, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1))
                         .addGap(18, 18, 18)
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(sLandmark, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(vMaintComp, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(mainPanelLayout.createSequentialGroup()
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sName, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(vCode, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4))
                         .addGap(18, 18, 18)
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
-                            .addComponent(eLandmark, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(vMaintMech, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(mainPanelLayout.createSequentialGroup()
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sDist, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(vMaintDate, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5))
                         .addGap(18, 18, 18)
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
-                            .addComponent(sComm, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(vMaintComm, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(214, Short.MAX_VALUE))
         );
         mainPanelLayout.setVerticalGroup(
@@ -248,24 +248,24 @@ public class streetRoadAddPage extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(sCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sLandmark, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(vMaintCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(vMaintComp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(sName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(eLandmark, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(vCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(vMaintMech, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(sDist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sComm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(vMaintDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(vMaintComm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54))
@@ -431,29 +431,29 @@ public class streetRoadAddPage extends javax.swing.JFrame {
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
 
-        String sql = "INSERT into streetsroads(StrCode, StrName, StrDist, SLMark, ELMark, StrCom) value(?,?,?,?,?,?)";
+        String sql = "INSERT into vehiclemaintenancelog(VMCode, VCode, VMDate, VMComp, VMMech, VMComm) value(?,?,?,?,?,?)";
         try{
             PreparedStatement pst = conn.prepareStatement(sql);
             
-            pst.setString(1, sCode.getText());
-            pst.setString(2, sName.getText());
-            pst.setString(3, sDist.getText());
-            pst.setString(4, sLandmark.getText());
-            pst.setString(5, eLandmark.getText());
-            pst.setString(6, sComm.getText());
+            pst.setString(1, vMaintCode.getText());
+            pst.setString(2, vCode.getText());
+            pst.setString(3, vMaintDate.getText());
+            pst.setString(4, vMaintComp.getText());
+            pst.setString(5, vMaintMech.getText());
+            pst.setString(6, vMaintComm.getText());
             
             pst.executeUpdate();
             JOptionPane.showMessageDialog(this, "Record Added");
             
             tableUpdate();
             
-            sCode.setText("");
-            sName.setText("");
-            sDist.setText("");
-            sLandmark.setText("");
-            eLandmark.setText("");
-            sComm.setText("");
-            sCode.requestFocus();
+            vMaintCode.setText("");
+            vCode.setText("");
+            vMaintDate.setText("");
+            vMaintComp.setText("");
+            vMaintMech.setText("");
+            vMaintComm.setText("");
+            vMaintCode.requestFocus();
             
             
             
@@ -463,13 +463,13 @@ public class streetRoadAddPage extends javax.swing.JFrame {
         
     }//GEN-LAST:event_addActionPerformed
 
-    private void sNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sNameActionPerformed
+    private void vCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vCodeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_sNameActionPerformed
+    }//GEN-LAST:event_vCodeActionPerformed
 
-    private void sDistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sDistActionPerformed
+    private void vMaintDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vMaintDateActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_sDistActionPerformed
+    }//GEN-LAST:event_vMaintDateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -488,13 +488,13 @@ public class streetRoadAddPage extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(streetRoadAddPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(vehicleMaintLogAddPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(streetRoadAddPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(vehicleMaintLogAddPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(streetRoadAddPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(vehicleMaintLogAddPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(streetRoadAddPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(vehicleMaintLogAddPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -508,7 +508,7 @@ public class streetRoadAddPage extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new streetRoadAddPage().setVisible(true);
+                new vehicleMaintLogAddPage().setVisible(true);
             }
         });
     }
@@ -519,7 +519,6 @@ public class streetRoadAddPage extends javax.swing.JFrame {
     private javax.swing.JPanel bg;
     private javax.swing.JLabel bgPhoto;
     private javax.swing.JButton deleteButton;
-    private javax.swing.JTextField eLandmark;
     private javax.swing.JLabel exit;
     private javax.swing.JLabel iconBox;
     private javax.swing.JButton inquireButton;
@@ -533,13 +532,14 @@ public class streetRoadAddPage extends javax.swing.JFrame {
     private javax.swing.JPanel mainPanel;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JButton modifyButton;
-    private javax.swing.JTextField sCode;
-    private javax.swing.JTextField sComm;
-    private javax.swing.JTextField sDist;
-    private javax.swing.JTextField sLandmark;
-    private javax.swing.JTextField sName;
     private javax.swing.JButton signoutButton;
     private javax.swing.JTable table;
+    private javax.swing.JTextField vCode;
+    private javax.swing.JTextField vMaintCode;
+    private javax.swing.JTextField vMaintComm;
+    private javax.swing.JTextField vMaintComp;
+    private javax.swing.JTextField vMaintDate;
+    private javax.swing.JTextField vMaintMech;
     // End of variables declaration//GEN-END:variables
 }
 

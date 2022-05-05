@@ -323,57 +323,57 @@ public class deletePage extends javax.swing.JFrame {
             else
             if(entityMenu.getSelectedItem().equals("Streets/Roads")) {
                 setVisible(false);
-                new streetroadsInquirePage().setVisible(true);
+                new streetRoadDeletePage().setVisible(true);
             }//END if statement
             else
             if(entityMenu.getSelectedItem().equals("Transportation Custodians")) {
                 setVisible(false);
-                new transportationCustodianInquirePage().setVisible(true);
+                new transportationCustodianDeletePage().setVisible(true);
             }//END if statement
             else
             if(entityMenu.getSelectedItem().equals("Transportation Vehicles")) {
                 setVisible(false);
-                new transportationVehicleInquirePage().setVisible(true);
+                new transportationVehicleDeletePage().setVisible(true);
             }//END if statement
             else
             if(entityMenu.getSelectedItem().equals("Route Summaries")) {
                 setVisible(false);
-                new routeSummaryInquirePage().setVisible(true);
+                new routeSummaryDeletePage().setVisible(true);
             }
             else
             if(entityMenu.getSelectedItem().equals("Route Details")) {
                 setVisible(false);
-                new routeDetailsInquirePage().setVisible(true);
+                new routeDetailsDeletePage().setVisible(true);
             }
             else
             if(entityMenu.getSelectedItem().equals("Vehicle Maintenance Companies")) {
                 setVisible(false);
-                new vehicleMaintCompInquirePage().setVisible(true);
+                new vehicleMaintCompDeletePage().setVisible(true);
             }
             else
             if(entityMenu.getSelectedItem().equals("Vehicle Maintenance Logs")) {
                 setVisible(false);
-                new vehicleMaintLogInquirePage().setVisible(true);
+                new VehicleMaintLogDeletePage().setVisible(true);
             }
             else
             if(entityMenu.getSelectedItem().equals("Route Schedules")) {
                 setVisible(false);
-                new routeScheduleInquirePage().setVisible(true);
+                new routeScheduleDeletePage().setVisible(true);
             }
             else
             if(entityMenu.getSelectedItem().equals("Route Execution Logs")) {
                 setVisible(false);
-                new routeExecutionLogInquirePage().setVisible(true);
+                new routeExecutionLogDeletePage().setVisible(true);
             }
             else
             if(entityMenu.getSelectedItem().equals("Road Incidents Logs")) {
                 setVisible(false);
-                new roadIncidentLogInquirePage().setVisible(true);
+                new roadincidentsLogDeletePage().setVisible(true);
             }
             else
             if(entityMenu.getSelectedItem().equals("Frequently Asked Questions Log")) {
                 setVisible(false);
-                new freqAskedQuestInquirePage().setVisible(true);
+                new frequentlyAskedQuestionsDeletePage().setVisible(true);
             }
         }
         catch(Exception e)
